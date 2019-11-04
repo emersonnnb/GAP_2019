@@ -1,5 +1,5 @@
 <?php
-include_once 'validacao.php';
+include 'validacao.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -44,7 +44,7 @@ while ($array = mysqli_fetch_array($retorno, MYSQLI_ASSOC)) {
                     <td><?=$fornecedor?></td>
                     <td>
                         <?php if (($nivel == 1) || ($nivel == 2)) {?>
-                        <a class="btn-editar btn btn-sm btn-warning" href="editar_produto.php?id=<?=$idProduto?>"
+                        <a class="btn-editar btn btn-sm btn-primary" href="editar_produto.php?id=<?=$idProduto?>"
                             role="button"><i class="far fa-edit"></i> Editar</a>
                         <?php }?>
                         <?php if ($nivel == 1) {?>

@@ -1,7 +1,7 @@
 <?php
 session_start();
-include_once('conexao.php');
-include_once('password.php');
+include('conexao.php');
+include('password.php');
 
 $emailUsuario = trim($_POST['usuario']);
 $senhaDigitada = trim($_POST['senha']);

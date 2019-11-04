@@ -1,3 +1,6 @@
+<?php session_start();
+include ('validacao.php');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -66,6 +69,16 @@
                         </li>
                     </ul>
                 </li>
+                <li>
+                    <a href="../logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    <!--<ul class="collapse list-unstyled " id="usuarios">
+                        <li>
+                            <a href="menu.php?p=cadastrar_usuario">- Logout</a>
+                        </li>
+                        
+                    </ul>
+                    -->
+                </li>
             </ul>
            
         </nav>
@@ -75,13 +88,13 @@
             <div class="container-fluid">
                 <button type="button" id="sidebarCollapse" class="btn btn-info">
                         <i class="fas fa-align-left"></i>
-                        <span>Menu</span>
+                        <span></span>
                 </button>
                 <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fas fa-align-justify"></i>
                 </button>
             </div>
-            <div class="line"></div>
+            <!--<div class="line"></div>-->
             <div>
                 <?php
                     if(isset($_GET["p"])) 

@@ -1,3 +1,5 @@
+<?php session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <?php include_once('head.php'); ?>
@@ -42,8 +44,6 @@
             <p class="text-right">Beta:1.0</p>
         </form>
     </div>
-    
-
     <?php include_once('footer.php'); ?>
 </body>
 

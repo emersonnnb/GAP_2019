@@ -2,9 +2,7 @@
 <html lang="en">
 <?php include_once("head.php"); ?>
 <title>Novo Cadastro</title>
-
 <body>
-
     <div class="container" style="padding:20px 0;max-width: 800px;">
         <form action="inserir_usuario_externo.php" method="POST">
             <h4 style="padding:0 0 20px 0;margin-bottom:35px;" class="border-bottom">Cadastro de usuário</h4>
