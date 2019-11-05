@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
+<?php 
+//include_once('head.php');
+include_once('conexao.php');
+?>
 <title>Cadastro de Categoria</title>
 <body>    
     <div style="padding:20px 0;max-width:800px" class="container">

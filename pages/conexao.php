@@ -1,7 +1,7 @@
 <?php
 $servername = 'localhost';
 $database = 'estoque';
-$username = 'user';
-$password = '123';
+$username = 'root';
+$password = '';
 
 $conexao = mysqli_connect($servername, $username, $password, $database);

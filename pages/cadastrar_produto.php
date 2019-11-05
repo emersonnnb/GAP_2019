@@ -7,7 +7,6 @@ include_once('conexao.php');
 ?>
 <title>Cadastro de Produto</title>
 <body>
-<?php //include_once('menu.php'); ?>
     <div style="padding:20px 0;max-width:800px" class="container">
         <h4 style="padding:0 0 20px 0;margin-bottom:35px;" class="border-bottom">Cadastro de Produto</h4>
         <form action="inserir_produto.php" method="POST">
