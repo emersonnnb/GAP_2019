@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <title>Cadastro de usuário</title>
 
 <body>
@@ -9,35 +9,35 @@
             <div class="form-group">
                 <label>Nome</label>
                 <input class="form-control" type="text" name="nome" placeholder="Digite o seu nome"
-                    autocomplete="off" />
+                    autocomplete="off" required />
             </div>
 
             <div class="form-group">
                 <label>Sobrenome</label>
-                <input class="form-control" type="text" name="sobrenome" placeholder="Digite o seu sobrenome" />
+                <input class="form-control" type="text" name="sobrenome" placeholder="Digite o seu sobrenome" required />
             </div>
 
             <div class="form-group">
                 <label>E-mail</label>
                 <input class="form-control" type="email" name="email"
-                    placeholder="Digite o seu e-mail para acessar o sistema" />
+                    placeholder="Digite o seu e-mail para acessar o sistema" required />
             </div>
 
             <div class="form-group">
                 <label>Senha</label>
-                <input class="form-control" type="password" id="senha" name="senha" placeholder="Digite uma senha" />
+                <input class="form-control" type="password" id="senha" name="senha" placeholder="Digite uma senha" required />
             </div>
 
             <div class="form-group">
                 <label>Repetir senha</label>
                 <input class="form-control" type="password" id="senha2" name="senha2"
-                    placeholder="Digite sua senha novamente" oninput="validaSenha(this)" />
+                    placeholder="Digite sua senha novamente" oninput="validaSenha(this)" required />
                 <small style="display:none" id="msg-erro">A senha precisa ser igual a senha digitada acima.</small>
             </div>
 
             <div class="form-group">
                 <label>Nível de acesso</label>
-                <select class="form-control" name="nivelUsuario">
+                <select class="form-control" name="nivelUsuario" required>
                     <option value="1">Administrador</option>
                     <option value="2">Funcionário</option>
                     <option value="3">Conferente</option>
