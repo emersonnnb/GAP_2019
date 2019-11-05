@@ -27,7 +27,7 @@
         <div class="d-flex justify-content-center">
             <img src="img/cadeado.png" width="125px" height="125px" alt="">
         </div>
-        <form action="/pages/logar.php" method="POST">
+        <form action="./pages/logar.php" method="POST">
             <div class="form-group">
                 <label>E-mail</label>
                 <input class="form-control" type="email" name="usuario" placeholder="Digite o e-mail do usuário"

@@ -11,7 +11,7 @@ $retornoEmailUsuario = mysqli_query($conexao,$sql);
 $totalRetornado = mysqli_num_rows($retornoEmailUsuario);
 
 if($totalRetornado == 0){
-    header("Location: /index.php?semCadastro=".$emailUsuario); 
+    header("Location: ../index.php?semCadastro=".$emailUsuario); 
 }
 if($totalRetornado >= 2){
     header("Location: /index.php?emailCadastrado=".$emailUsuario); 
