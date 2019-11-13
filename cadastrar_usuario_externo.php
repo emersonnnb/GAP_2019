@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
-<?php include_once("head.php"); ?>
+<html lang="pt-br">
 <title>Novo Cadastro</title>
+<?php 
+include ('./head.php');
+?>
 <body>
     <div class="container" style="padding:20px 0;max-width: 800px;">
-        <form action="inserir_usuario_externo.php" method="POST">
+        <form action="pages\inserir_usuario_externo.php" method="POST">
             <h4 style="padding:0 0 20px 0;margin-bottom:35px;" class="border-bottom">Cadastro de usuário</h4>
             <div class="form-group">
                 <label>Nome</label>
@@ -40,7 +42,7 @@
     </div>
 
 
-    <?php include_once("footer.php"); ?>
+    <?php include_once("./footer.php"); ?>
     <script>
     function validaSenha(input) {
         if (input.value != document.getElementById('senha').value) {

@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <title>Aprovar Usuário</title>
+<?php
+include_once('../head.php');
+?>
+<body>
 
-<body>    
     <div style="padding:20px 0" class="container">
-        <h3 style="margin-bottom:30px">Lista de Categorias</h3>
+        <h3 style="margin-bottom:30px">Aprovações</h3>
 
         <table class="table">
             <thead>
@@ -47,7 +50,7 @@ while ($array = mysqli_fetch_array($retorno, MYSQLI_ASSOC)) {
                     <td><?=$email?></td>
                     <td><?=$nivel?></td>
                     <td>
-                        <form action="" method="POST">
+                        <form action="menu.php" method="POST">
                             <a type="submit" class="btn-editar btn btn-sm btn-primary"
                                 href="editar_usuario_aprovado.php?id=<?=$idUsuario?>" role="button"><i
                                     class="far fa-edit"></i> Aprovar</a>
