@@ -41,7 +41,7 @@
             <button type="submit" class="btn btn-primary btn-sm btn-block">Entrar</button>
             <br>
             <p class="d-flex justify-content-center">Não possui cadastro?<span style="width:5px"></span><a href="cadastrar_usuario_externo.php">Clique aqui</a></p>
-            <p class="text-right">Beta:1.0</p>
+            <p class="text-right">Beta:2.0</p>
         </form>
     </div>
     <?php include_once('footer.php'); ?>
