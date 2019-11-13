@@ -8,6 +8,10 @@ body {
     background: #fafafa;
 }
 
+.container{
+    width: 40% !important;
+}
+
 p {
     font-family: 'Poppins', sans-serif;
     font-size: 1.1em;
