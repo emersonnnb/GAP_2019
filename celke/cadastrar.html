@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    <!------------------- navbar --------------------------->
     <nav class="navbar navbar-expand navbar-dark bg-primary">
         <a class="sidebar-toggle text-light mr-3">
             <span class="navbar-toggler-icon"></span>
@@ -37,29 +38,40 @@
     <div class="d-flex">
         <nav class="sidebar">
             <ul class="list-unstyled">
-                <li><a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard </a></li>
+                <li><a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
                 <li>
                     <a href="#submenu1" data-toggle="collapse">
                         <i class="fas fa-user"></i> Usuário
                     </a>
                     <ul id="submenu1" class="list-unstyled collapse">
-                        <li><a href="listar.html"><i class="fas fa-users"></i> Usuários</a></li>
-                        <li><a href="#"><i class="fas fa-key"></i> Nível de Acesso</a></li>
+                        <li class="active"><a href="cadastrar.html"><i class="fas fa-user-plus"></i> Novo </a></li>
+                        <li><a href="listar.html"><i class="fas fa-users"></i> Usuários </a></li>
+                        <li><a href="#"><i class="fas fa-key"></i> Nível de Acesso </a></li>
+                        <li><a href="#"><i class="fas fa-check"></i> Aprovar </a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#submenu2" data-toggle="collapse"><i class="fas fa-list-ul"></i> Menu</a>
+                    <a href="#submenu2" data-toggle="collapse"><i class="fas fa-list-ul"></i> Produtos</a>
                     <ul id="submenu2" class="list-unstyled collapse">
-                        <li><a href="#"><i class="fas fa-file-alt"></i> Páginas</a></li>
-                        <li><a href="#"><i class="fab fa-elementor"></i> Item de Menu</a></li>
+                        <li><a href="#"><i class="fas fa-tags"></i> Cadastrar</a></li>
+                        <li><a href="#"><i class="far fa-list-alt"></i> Listar </a></li>
                     </ul>
-
                 </li>
-                <li><a href="#"> Item 1</a></li>
-                <li><a href="#"> Item 2</a></li>
-                <li><a href="#"> Item 3</a></li>
-                <li class="active"><a href="#"> Item 4</a></li>
-                <li><a href="#"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+                <li>
+                    <a href="#submenu3" data-toggle="collapse"><i class="fas fa-folder"></i> Categoria</a>
+                    <ul id="submenu3" class="list-unstyled collapse">
+                        <li><a href="#"><i class="fas fa-folder-plus"></i> Cadastrar</a></li>
+                        <li><a href="#"><i class="fas fa-folder-open"></i> Listar </a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#submenu4" data-toggle="collapse"><i class="fas fa-truck"></i> Fornecedor</a>
+                    <ul id="submenu4" class="list-unstyled collapse">
+                        <li><a href="#"><i class="fas fa-tags"></i> Cadastrar</a></li>
+                        <li><a href="#"><i class="far fa-list-alt"></i> Listar </a></li>
+                    </ul>
+                </li>
+                <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
             </ul>
         </nav>
         <!------------------- Formulario de cadastro  --------------------------->
@@ -70,11 +82,6 @@
                         <h2 class="display-4 titulo">Cadastrar Usuário</h2>
                     </div>
                     <a href="listar.html">
-                        <div class="p2">
-                            <button class="btn btn-outline-info btn-sm">
-                                Listar
-                            </button>
-                        </div>
                     </a>
                 </div>
                 <hr>
@@ -169,8 +176,6 @@
             </div>
         </div>
     </div>
-
-
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
