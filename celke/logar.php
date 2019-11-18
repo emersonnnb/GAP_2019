@@ -3,30 +3,57 @@ session_start();
 include('conexao.php');
 include('password.php');
 
-$emailUsuario = trim($_POST['usuario']);
-$senhaDigitada = trim($_POST['senha']);
+if(empty($_POST['usuario']) || empty($_POST['senha'])) {
+    header('Location: index.php');
+	exit();
+}
+$usuario = trim($_POST['usuario']);
+$password = trim($_POST['senha']);
 
-$sql = "SELECT Email, Senha, IdUsuario FROM usuario WHERE Email = '$emailUsuario' AND Status = 'Ativo'";
-$retornoEmailUsuario = mysqli_query($conexao,$sql);
-$totalRetornado = mysqli_num_rows($retornoEmailUsuario);
+$sql = "SELECT user, senha, id_usuario FROM usuario WHERE user = '$usuario' AND status = 'Ativo'";
+$retornoUsuario = mysqli_query($conn,$sql);
+$totalRetornado = mysqli_num_rows($retornoUsuario);
 
-if($totalRetornado == 0){
-    header("Location: index.php?semCadastro=".$emailUsuario); 
+if($totalRetornado == 0){  
+    header("Location: index.php?semCadastro=".$usuario);     
 }
 if($totalRetornado >= 2){
-    header("Location: index.php?emailCadastrado=".$emailUsuario); 
+    header("Location: index.php?UsuarioCadastrado=".$usuario); 
 }
 if($totalRetornado == 1){
-    while($array = mysqli_fetch_array($retornoEmailUsuario,MYSQLI_ASSOC)){
-        $senhaCadastrada = $array['Senha'];
-        $senhaDecodificada = sha1($senhaDigitada);
+    while($array = mysqli_fetch_array($retornoUsuario,MYSQLI_ASSOC)){
+        $senhaCadastrada = $array['senha'];
+        $senhaDecodificada = sha1($password);
         if($senhaDecodificada == $senhaCadastrada){
-            $_SESSION['usuario'] = $array["IdUsuario"];
+            $_SESSION['usuario'] = $array["id_usuario"];
             header("Location: home.html"); 
         } else{
             header("Location: index.php?dadosInvalidos=1"); 
         }
     }
 }
+/*
+if(empty($_POST['usuario']) || empty($_POST['senha'])) {
+    header('Location: index.php');
+	exit();
+}
 
+$usuario = mysqli_real_escape_string($conn, $_POST['usuario']);
+$senha = mysqli_real_escape_string($conn, $_POST['senha']);
+
+$query = "select user from usuario where user = '{$usuario}' and senha = md5('{$senha}')";
+ 
+$result = mysqli_query($conn, $query); 
+$row = mysqli_num_rows($result);
+
+if($row == 1) {
+	$_SESSION['usuario'] = $usuario;
+	header('Location: menu.php');
+	exit();
+} else {
+	$_SESSION['nao_autenticado'] = true;
+	header('Location: index.php');
+	exit();
+}
+*/
 ?>

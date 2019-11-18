@@ -20,20 +20,23 @@
         </div>
         <form action="logar.php" method="POST">
             <div class="form-group">
-                <label>E-mail</label>
-                <input class="form-control" type="email" name="usuario" placeholder="Digite o e-mail do usuário" autocomplete="off" />
+                <strong><label> Login do Usuário</label></strong>
+                <input class="form-control" type="text" name="usuario" placeholder="Digite o seu login"
+                    autocomplete="off" required />
             </div>
 
             <div class="form-group">
-                <label>Senha</label>
-                <input class="form-control" type="password" name="senha" placeholder="Digite sua senha" autocomplete="off" />
+                <strong><label>Senha</label></strong>
+                <input class="form-control" type="password" name="senha" placeholder="Digite sua senha"
+                    autocomplete="off" required />
             </div>
-            <button type="submit" class="btn btn-primary btn-sm btn-block">Entrar</button>
+            <button type="submit" class="btn btn-primary btn-lg btn-block ">Entrar</button>
             <br>
-            <p class="d-flex justify-content-center">Não possui cadastro?<span style="width:5px"></span><a href="cadastrar_usuario_externo.php">Clique aqui</a></p>
-            <p class="text-right">Beta:2.0</p>
+            <p class="text-center">Build:2.1</p>
         </form>
     </div>
 </body>
+
+
 
 </html>

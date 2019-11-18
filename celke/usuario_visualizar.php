@@ -38,16 +38,15 @@
     <div class="d-flex">
         <nav class="sidebar">
             <ul class="list-unstyled">
-                <li><a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="home.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
                 <li>
                     <a href="#submenu1" data-toggle="collapse">
                         <i class="fas fa-user"></i> Usuário
                     </a>
                     <ul id="submenu1" class="list-unstyled collapse">
-                        <li><a href="cadastrar.html"><i class="fas fa-user-plus"></i> Novo </a></li>
-                        <li class="active"><a href="listar.html"><i class="fas fa-users"></i> Usuários </a></li>
-                        <li><a href="#"><i class="fas fa-key"></i> Nível de Acesso </a></li>
-                        <li><a href="#"><i class="fas fa-check"></i> Aprovar </a></li>
+                        <li><a href="usuario_cadastrar.html"><i class="fas fa-user-plus"></i> Novo </a></li>
+                        <li class="active"><a href="usuario_listar.html"><i class="fas fa-users"></i> Usuários </a></li>
+                        <li><a href="#"><i class="fas fa-key"></i> Nível de Acesso </a></li>                        
                     </ul>
                 </li>
                 <li>
@@ -83,18 +82,18 @@
                     </div>
                     <div class="p2">
                         <span class="d-none d-md-block">
-                                    <a href="listar.html" class="btn btn-outline-info btn-sm">Listar</a>
-                                    <a href="editar.html"class="btn btn-outline-warning btn-sm">Editar</a>
-                                    <a href="apagar.html" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#apagarRegistro">Apagar</a>
+                                    <a href="usuario_listar.php" class="btn btn-outline-info btn-sm">Listar</a>
+                                    <a href="usuario_editar.php?id=<?=$id_usuario?>"class="btn btn-outline-warning btn-sm">Editar</a>
+                                    <a href="usuario_apagar.html" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#apagarRegistro">Apagar</a>
                                 </span>
                         <div class="dropdown d-block d-md-none">
                             <button class="btn btn-primary dropdown-toggle btn-sm" type="button" id="acoesListar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                           Ações
                                         </button>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="acoesListar">
-                                <a class="dropdown-item" href="Listar.html">Listar</a>
-                                <a class="dropdown-item" href="editar.html">Editar</a>
-                                <a class="dropdown-item" href="apagar.html" data-toggle="modal" data-target="#apagarRegistro">Apagar</a>
+                                <a class="dropdown-item" href="usuario_listar.php">Listar</a>
+                                <a class="dropdown-item" href="usuario_editar.php?id=<?=$id_usuario?>">Editar</a>
+                                <a class="dropdown-item" href="usuario_apagar.html" data-toggle="modal" data-target="#apagarRegistro">Apagar</a>
                             </div>
                         </div>
                     </div>
@@ -118,27 +117,6 @@
         </div>
     </div>
     </div>
-    <!------------------- Modal para confirmar a exclusão de um registo--------------------------->
-    <div class="modal fade" id="apagarRegistro" tabindex="-1" role="dialog" aria-labelledby="apagarRegistro" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header bg-danger text-white">
-                    <h5 class="modal-title" id="exampleModalLabel">Excluir item</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                    Tem certeza que deseja excluiir o item selecionado?
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-danger">Apagar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
