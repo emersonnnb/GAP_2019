@@ -69,8 +69,9 @@ INSERT INTO `estoque` (`IdProduto`, `Numero`, `Nome`, `Quantidade`, `Categoria`,
 
 DROP TABLE IF EXISTS `fornecedor`;
 CREATE TABLE IF NOT EXISTS `fornecedor` (
-  `IdFornecedor` int(11) NOT NULL AUTO_INCREMENT,
+  `IdFornecedor` int(11) AUTO_INCREMENT,
   `Nome` varchar(150) NOT NULL,
+  `Cnpj` varchar(11) NOT NULL,
   PRIMARY KEY (`IdFornecedor`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
@@ -78,8 +79,8 @@ CREATE TABLE IF NOT EXISTS `fornecedor` (
 -- Extraindo dados da tabela `fornecedor`
 --
 
-INSERT INTO `fornecedor` (`IdFornecedor`, `Nome`) VALUES
-(1, 'Fornecedor 01'),
+INSERT INTO `fornecedor` (`IdFornecedor`, `Nome`, `CnpjFornecedor`) VALUES
+(1, 'Fornecedor 01', ),
 (2, 'Fornecedor 02'),
 (3, 'Fornecedor 03');
 
