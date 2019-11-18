@@ -2,49 +2,41 @@
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
-<?php include_once('head.php'); ?>
-<title>Login</title>
-<style>
-.tamanho-largura {
-    max-width: 500px;
-    height: auto;
-    left: 50%;
-    margin: -200px 0 0 -210px;
-    padding: 40px;
-    position: absolute;
-    top: 35%;
-    border: 2px solid #f3f3f3;
-    border-radius: 15px;
-    -webkit-box-shadow: 10px 10px 47px -3px rgba(161, 161, 161, 1);
-    -moz-box-shadow: 10px 10px 47px -3px rgba(161, 161, 161, 1);
-    box-shadow: 10px 10px 47px -3px rgba(161, 161, 161, 1);
-}
-</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/estilo.css">
+    <script src="https://kit.fontawesome.com/15b4b8b90e.js"></script>
+</head>
 
 <body>
-    <div class="container tamanho-largura" >
-    <h2 class="text-center">GAP-SISTEMAS</h2>
+    <div class="container tamanho-largura">
+        <h2 class="text-center">GAP-SISTEMAS</h2>
         <div class="d-flex justify-content-center">
-            <img src="img/cadeado.png" width="125px" height="125px" alt="">
+            <img src="imagem/cadeado.png" width="125px" height="125px" alt="">
         </div>
-        <form action="./pages/logar.php" method="POST">
+        <form action="logar.php" method="POST">
             <div class="form-group">
-                <label>E-mail</label>
-                <input class="form-control" type="email" name="usuario" placeholder="Digite o e-mail do usuário"
-                    autocomplete="off" />
+                <strong><label> Login do Usuário</label></strong>
+                <input class="form-control" type="text" name="usuario" placeholder="Digite o seu login"
+                    autocomplete="off" required />
             </div>
 
             <div class="form-group">
-                <label>Senha</label>
-                <input class="form-control" type="password" name="senha" placeholder="Digite sua senha" autocomplete="off" />
+                <strong><label>Senha</label></strong>
+                <input class="form-control" type="password" name="senha" placeholder="Digite sua senha"
+                    autocomplete="off" required />
             </div>
-            <button type="submit" class="btn btn-primary btn-sm btn-block">Entrar</button>
+            <button type="submit" class="btn btn-primary btn-lg btn-block ">Entrar</button>
             <br>
-            <p class="d-flex justify-content-center">Não possui cadastro?<span style="width:5px"></span><a href="cadastrar_usuario_externo.php">Clique aqui</a></p>
-            <p class="text-right">Beta:2.0</p>
+            <p class="text-center">Build:2.1</p>
         </form>
     </div>
-    <?php include_once('footer.php'); ?>
 </body>
+
+
 
 </html>
