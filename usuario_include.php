@@ -20,7 +20,9 @@ include_once("conexao.php");
     
 	if($linha != 0) {        
         echo $linha;
-        //echo "<script type=\"text/javascript\">alert('Usuário ja cadastrado!!');</script>";
+        echo "<script type=\"text/javascript\">alert('Usuário ja cadastrado!!');</script>";
+        echo "<script type=\"text/javascript\">window.location='usuario_cadastrar.html';</script>";
+       
     }
     
     else{

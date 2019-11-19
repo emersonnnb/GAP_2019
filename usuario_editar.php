@@ -47,8 +47,7 @@
                     </a>
                     <ul id="submenu1" class="list-unstyled collapse">
                         <li><a href="usuario_cadastrar.html"><i class="fas fa-user-plus"></i> Novo </a></li>
-                        <li class="active"><a href="usuario_listar.html"><i class="fas fa-users"></i> Usuários </a></li>
-                        <li><a href="#"><i class="fas fa-key"></i> Nível de Acesso </a></li>
+                        <li class="active"><a href="usuario_listar.html"><i class="fas fa-users"></i> Usuários </a></li>                        
                     </ul>
                 </li>
                 <li>
@@ -75,7 +74,7 @@
                 <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
             </ul>
         </nav>
-        <!------------------- Formulario de cadastro  --------------------------->
+        <!------------------- Title do formulário  --------------------------->
         <div class="content p-1">
             <div class="list-group-item">
                 <div class="d-flex">
@@ -84,10 +83,8 @@
                     </div>
                     <div class="p2">
                         <span class="d-none d-md-block">
-                            <a href="usuario_listar.php" class="btn btn-outline-info btn-sm">Listar</a>
-                            <a href="usuario_visualizar.html" class="btn btn-outline-primary btn-sm">Visualizar</a>
-                            <a href="usuario_apagar.html" class="btn btn-outline-danger btn-sm" data-toggle="modal"
-                                data-target="#apagarRegistro">Apagar</a>
+                            <a href="javascript:history.go(-1)" class="btn btn-info btn-sm">Voltar</a>
+                            
                         </span>
                         <div class="dropdown d-block d-md-none">
                             <button class="btn btn-primary dropdown-toggle btn-sm" type="button" id="acoesListar"
@@ -96,8 +93,8 @@
                             </button>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="acoesListar">
                                 <a class="dropdown-item" href="usuario_listar.php">Listar</a>
-                                <a class="dropdown-item" href="usuario_visualizar.html">Visualizar</a>
-                                <a class="dropdown-item" href="usuario_pagar.html" data-toggle="modal"
+                                <a class="dropdown-item" href="usuario_visualizar.php">Visualizar</a>
+                                <a class="dropdown-item" href="usuario_pagar.php" data-toggle="modal"
                                     data-target="#apagarRegistro">Apagar</a>
                             </div>
                         </div>
@@ -105,10 +102,11 @@
                     </div>
                     </a>
                 </div>
+                <!------------------- Formulario de edição  --------------------------->
                 <hr>
                 <form>
                 <?php
-                    include_once 'edit_usuario.php';?> 
+                    include_once 'usuario_update.php';?> 
                 </form>
             </div>
         </div>
