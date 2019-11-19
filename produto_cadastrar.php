@@ -13,7 +13,6 @@
 </head>
 
 <body>
-    <!-- navbar -->
     <nav class="navbar navbar-expand navbar-dark bg-primary">
         <a class="sidebar-toggle text-light mr-3">
             <span class="navbar-toggler-icon"></span>
@@ -25,24 +24,25 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle menu-header" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">
                         <img class="rounded-circle" src="imagem/icon.png" width="20" height="20"> &nbsp;
-                        <span class="d-none d-sm-inline">Usuário</span>
+                        <span class="d-none d-sm-inline">Produto</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="#">
                             <i class="fas fa-user"></i> Perfil</a>
-                        <a class="dropdown-item" href="logout.php">
+                        <a class="dropdown-item" href="#">
                             <i class="fas fa-sign-out-alt"></i> Sair</a>
                     </div>
                 </li>
             </ul>
         </div>
     </nav>
+
     <!-- Menu sidebar -->
     <div class="d-flex">
         <nav class="sidebar">
             <ul class="list-unstyled">
                 <li>
-                    <a href="#">
+                    <a href="home.html">
                         <i class="fas fa-tachometer-alt"></i> Dashboard</a>
                 </li>
                 <li>
@@ -50,13 +50,17 @@
                         <i class="fas fa-user"></i> Usuário
                     </a>
                     <ul id="submenu1" class="list-unstyled collapse">
-                        <li>
+                        <li class="active">
                             <a href="usuario_cadastrar.html">
                                 <i class="fas fa-user-plus"></i> Novo </a>
                         </li>
                         <li>
                             <a href="usuario_listar.php">
                                 <i class="fas fa-users"></i> Usuários </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-key"></i> Nível de Acesso </a>
                         </li>
                     </ul>
                 </li>
@@ -65,11 +69,11 @@
                         <i class="fas fa-list-ul"></i> Produtos</a>
                     <ul id="submenu2" class="list-unstyled collapse">
                         <li>
-                            <a href="produto_cadastrar.php">
+                            <a href="#">
                                 <i class="fas fa-tags"></i> Cadastrar</a>
                         </li>
                         <li>
-                            <a href="produto_listar.php">
+                            <a href="#">
                                 <i class="far fa-list-alt"></i> Listar </a>
                         </li>
                     </ul>
@@ -108,57 +112,93 @@
                 </li>
             </ul>
         </nav>
-        <!-- Pagina Home  -->
+
+        <!--Formulário-->
         <div class="content p-1">
             <div class="list-group-item">
                 <div class="d-flex">
                     <div class="mr-auto p-2">
-                        <h2 class="display-4 titulo">Dashboard</h2>
+                        <h2 "display-4 titulo">Cadastrar Produto</h2>
                     </div>
+                    <a href="listar.html">
+                    </a>
                 </div>
-                <div class="row mb-3">
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card bg-success text-white">
-                            <div class="card-body">
-                                <i class="fas fa-users fa-3x"></i>
-                                <h6 class="card-title">Usuários</h6>
-                                <h2 class="lead">147</h2>
-                            </div>
+                <hr>
+                <form action="usuario_include.php" method="GET">
+                    <div class="form-row">
+                       
+                         <div class="form-group col-md-4">
+                            <label>
+                                <span class="text-danger">*</span> Código</label>
+                            <input name="nome" type="text" class="form-control" id="nome" placeholder="nome" required>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card bg-danger text-white">
-                            <div class="card-body">
-                                <i class="fas fa-file fa-3x"></i>
-                                <h6 class="card-title">Artigos</h6>
-                                <h2 class="lead">63</h2>
+
+                          <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label>
+                                    <span class="text-danger">*</span> Nome</label>
+                                <input name="nome" type="text" class="form-control" id="nome" placeholder="nome" required>
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label>Quantidade</label>
+                                <input name="quantidade" type="text" class="form-control" id="quantidade" placeholder="quantidade">
+                               
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card bg-warning text-white">
-                            <div class="card-body">
-                                <i class="fas fa-eye fa-3x"></i>
-                                <h6 class="card-title">Visitas</h6>
-                                <h2 class="lead">648</h2>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label>Categoria</label>
+                                <select name="categoria" id="categoria" class="form-control">
+                                    <option selected>Selecione</option>
+                                    <option value="1">Categoria 1</option>
+                                    <option value="2">Categoria 2</option>
+                                    <option value="2">Categoria 3</option>
+                                </select>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card bg-info text-white">
-                            <div class="card-body">
-                                <i class="fas fa-comments fa-3x"></i>
-                                <h6 class="card-title">Comentários</h6>
-                                <h2 class="lead">17</h2>
+
+                            <div class="form-group col-md-4">
+                                <label>Fornecedor</label>
+                                <select name="fornecedor" id="fornecedor" class="form-control">
+                                    <option selected>Selecione</option>
+                                    <option value="1">Fornecedor 1</option>
+                                    <option value="2">Fornecedor 2</option>
+                                    <option value="2">Fornecedor 3</option>
+                                </select>
                             </div>
+
+                            <p>
                         </div>
-                    </div>
+
+                        </p>
+                        <button type="submit" class="btn btn-success">Cadastrar</button>
+                </form>
                 </div>
             </div>
         </div>
     </div>
-
-
+    <!-- Modal para confirmar a exclusão de um registo-->
+    <div class="modal fade" id="apagarRegistro" tabindex="-1" role="dialog" aria-labelledby="apagarRegistro" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title" id="exampleModalLabel">Excluir item</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Tem certeza que deseja excluir o item selecionado?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger">Apagar</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
