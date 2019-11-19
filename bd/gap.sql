@@ -81,20 +81,23 @@ INSERT INTO `estoque` (`IdProduto`, `Numero`, `Nome`, `Quantidade`, `Categoria`,
 (10, 4, 'teste', 56, 'Fornecedor 01', ''),
 (11, 4, 'teste', 56, 'Fornecedor 01', ''),
 (12, 56, 'teste', 56, 'Software', 'Fornecedor 03'),
-(13, 56, 'teste', 56, 'Software', 'Fornecedor 03');
+(13, 56, 'teste', 56, 'Software', 'Fornecedor 03');*/
 
--- Estrutura da tabela `fornecedor`--
+-- Estrutura da tabela `fornecedor`
+--
 
 DROP TABLE IF EXISTS `fornecedor`;
-
 CREATE TABLE IF NOT EXISTS `fornecedor` (
-  `IdFornecedor` int(11) NOT NULL AUTO_INCREMENT,
+  `IdFornecedor` int(11) AUTO_INCREMENT,
   `Nome` varchar(150) NOT NULL,
-  PRIMARY KEY (`IdFornecedor`);
+  `Cnpj` varchar(11) NOT NULL,
+  PRIMARY KEY (`IdFornecedor`)
+);
 
-INSERT INTO `fornecedor` (`IdFornecedor`, `Nome`) VALUES
-(1, 'Fornecedor 01'),
+-- Extraindo dados da tabela `fornecedor`
+--
+
+INSERT INTO `fornecedor` (`IdFornecedor`, `Nome`, `CnpjFornecedor`) VALUES
+(1, 'Fornecedor 01', ),
 (2, 'Fornecedor 02'),
 (3, 'Fornecedor 03');
-
-*/
