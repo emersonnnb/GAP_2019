@@ -28,6 +28,22 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 INSERT INTO `usuario` ( `nome`, `email`, `nivelusuario`, `status`, `senha`, `user`) VALUES
 ('emerson ', 'teste@teste.com.br', 1, 'Ativo', '7c4a8d09ca3762af61e59520943dc26494f8941b','admin');
 
+DROP TABLE IF EXISTS `produto`;
+
+CREATE TABLE IF NOT EXISTS `produto` (
+  `id_produto` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  `dat_cadastro` TIMESTAMP,  
+  `nome` varchar(30) ,  
+  `descricao` varchar(255) ,  
+  `preco` DOUBLE(255) ,  
+  `tipo` varchar(255) , 
+  `categoria` varchar(255) , 
+  `status` varchar(255) , 
+  `uni_medida` varchar(255) , 
+  `cod_ean` int(255)   
+ 
+);
+
 /* Estrutura da Tabela de Endereço 
 
 DROP TABLE IF EXISTS `endereco`;
