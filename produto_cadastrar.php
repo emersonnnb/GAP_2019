@@ -1,117 +1,7 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>GAP</title>
-    <link rel="icon" href="imagem/favicon.ico">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <script defer src="js/fontawesome-all.min.js"></script>
-    <link rel="stylesheet" href="css/fontawesome.min.css">
-    <link rel="stylesheet" href="css/dashboard.css">
-</head>
-
-<body>
-    <nav class="navbar navbar-expand navbar-dark bg-primary">
-        <a class="sidebar-toggle text-light mr-3">
-            <span class="navbar-toggler-icon"></span>
-        </a>
-        <a class="navbar-brand" href="#">GAP</a>
-
-        <div class="collapse navbar-collapse">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle menu-header" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">
-                        <img class="rounded-circle" src="imagem/icon.png" width="20" height="20"> &nbsp;
-                        <span class="d-none d-sm-inline">Produto</span>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">
-                            <i class="fas fa-user"></i> Perfil</a>
-                        <a class="dropdown-item" href="#">
-                            <i class="fas fa-sign-out-alt"></i> Sair</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Menu sidebar -->
-    <div class="d-flex">
-        <nav class="sidebar">
-            <ul class="list-unstyled">
-                <li>
-                    <a href="home.html">
-                        <i class="fas fa-tachometer-alt"></i> Dashboard</a>
-                </li>
-                <li>
-                    <a href="#submenu1" data-toggle="collapse">
-                        <i class="fas fa-user"></i> Usuário
-                    </a>
-                    <ul id="submenu1" class="list-unstyled collapse">
-                        <li class="active">
-                            <a href="usuario_cadastrar.html">
-                                <i class="fas fa-user-plus"></i> Novo </a>
-                        </li>
-                        <li>
-                            <a href="usuario_listar.php">
-                                <i class="fas fa-users"></i> Usuários </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fas fa-key"></i> Nível de Acesso </a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#submenu2" data-toggle="collapse">
-                        <i class="fas fa-list-ul"></i> Produtos</a>
-                    <ul id="submenu2" class="list-unstyled collapse">
-                        <li>
-                            <a href="#">
-                                <i class="fas fa-tags"></i> Cadastrar</a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="far fa-list-alt"></i> Listar </a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#submenu3" data-toggle="collapse">
-                        <i class="fas fa-folder"></i> Categoria</a>
-                    <ul id="submenu3" class="list-unstyled collapse">
-                        <li>
-                            <a href="#">
-                                <i class="fas fa-folder-plus"></i> Cadastrar</a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fas fa-folder-open"></i> Listar </a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#submenu4" data-toggle="collapse">
-                        <i class="fas fa-truck"></i> Fornecedor</a>
-                    <ul id="submenu4" class="list-unstyled collapse">
-                        <li>
-                            <a href="#">
-                                <i class="fas fa-tags"></i> Cadastrar</a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="far fa-list-alt"></i> Listar </a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="logout.php">
-                        <i class="fas fa-sign-out-alt"></i> Sair</a>
-                </li>
-            </ul>
-        </nav>
+<?php
+$page = 'novo_produto';
+require('header.php');
+?>
 
         <!--Formulário-->
         <div class="content p-1">
@@ -124,13 +14,13 @@
                     </a>
                 </div>
                 <hr>
-                <form action="usuario_include.php" method="GET">
+                <form action="produto_include.php" method="GET">
                     <div class="form-row">
                        
                          <div class="form-group col-md-4">
                             <label>
                                 <span class="text-danger">*</span> Código</label>
-                            <input name="nome" type="text" class="form-control" id="nome" placeholder="nome" required>
+                            <input name="codigo" type="text" class="form-control" id="nome" placeholder="nome" required>
                         </div>
                     </div>
 
@@ -199,10 +89,7 @@
             </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="js/dashboard.js"></script>
-</body>
+    <?php
+    require('footer.php');
+?>
 
-</html>
