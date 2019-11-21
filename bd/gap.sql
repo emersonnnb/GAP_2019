@@ -28,6 +28,8 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 INSERT INTO usuario (nome, email, tipo_acesso, situacao, senha, user) VALUES
 ('emerson ', 'teste@teste.com.br', 1, 'ativo', '7c4a8d09ca3762af61e59520943dc26494f8941b','admin');
 
+
+/*Estrutura da tabela produto*/
 DROP TABLE IF EXISTS `produto`;
 
 CREATE TABLE IF NOT EXISTS `produto` (
@@ -45,6 +47,22 @@ CREATE TABLE IF NOT EXISTS `produto` (
 
 INSERT INTO `produto` ( `nome`, `descricao`, `preco`, `tipo`, `categoria`, `situacao`, `uni_medida`, `cod_ean`) VALUES
 ('Trakinas', 'Biscoito trakinas morango', '2,00', 'simples', 'Biscoitos','1','UN','78912345611');
+
+/* Estrutura da tabela fornecedor*/
+
+DROP TABLE IF EXISTS `fornecedor`;
+
+CREATE TABLE IF NOT EXISTS `fornecedor` (
+  `IdFornecedor` int(11) NOT NULL AUTO_INCREMENT,
+  `Nome` varchar(150) NOT NULL,
+  `CnpjFornecedor` varchar(11) NOT NULL,
+
+  PRIMARY KEY (`IdFornecedor`));
+
+INSERT INTO `fornecedor` (`IdFornecedor`, `Nome`, `CnpjFornecedor`) VALUES
+(1, 'Fornecedor 01', 12345678910),
+(2, 'Fornecedor 02', 12345678911),
+(3, 'Fornecedor 03', 12345678912);
 
 /* Estrutura da Tabela de Endereço 
 
@@ -101,19 +119,7 @@ INSERT INTO `estoque` (`IdProduto`, `Numero`, `Nome`, `Quantidade`, `Categoria`,
 (12, 56, 'teste', 56, 'Software', 'Fornecedor 03'),
 (13, 56, 'teste', 56, 'Software', 'Fornecedor 03');*/
 
--- Estrutura da tabela `fornecedor`--
 
-DROP TABLE IF EXISTS `fornecedor`;
 
-CREATE TABLE IF NOT EXISTS `fornecedor` (
-  `IdFornecedor` int(11) NOT NULL AUTO_INCREMENT,
-  `Nome` varchar(150) NOT NULL,
-  `CnpjFornecedor` varchar(11) NOT NULL,
 
-  PRIMARY KEY (`IdFornecedor`));
-
-INSERT INTO `fornecedor` (`IdFornecedor`, `Nome`, `CnpjFornecedor`) VALUES
-(1, 'Fornecedor 01', 12345678910),
-(2, 'Fornecedor 02', 12345678911),
-(3, 'Fornecedor 03', 12345678912);
 
