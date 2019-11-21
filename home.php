@@ -1,6 +1,6 @@
 <?php
-$page = 'home';
 require('header.php');
+$page = 'home';
 ?>
 <!-- Pagina Home  -->
         <div class="content p-1">
