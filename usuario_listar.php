@@ -56,7 +56,7 @@ require('header.php');
 
                                 <a href="usuario_apagar.php?id=<?=$id_usuario?>" class="btn btn-outline-danger btn-sm"
                                     data-toggle="modal" data-target=" #apagarRegistro">Apagar</a>
-                            </span>
+                            </span> 
                             <div class="dropdown d-block d-md-none">
                                 <button class="btn btn-primary dropdown-toggle btn-sm" type="button" id="acoesListar"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -76,53 +76,23 @@ require('header.php');
 
                 </tbody>
             </table>
-        </div>
-    </div>
-</div>
-</div>
-<!------------------- Modal param exibição de um registo--------------------------->
-<div class="modal fade" id="visualizarRegistro" tabindex="-1" role="dialog" aria-labelledby="visualizarRegistro"
-    aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header bg-primary text-white">
-                <h5 class="modal-title" id="exampleModalLabel">Dados do Usuário</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <?php
-                        include_once 'conexao.php';
-                        $id = $_GET['id'];
-
-                        $sql = "SELECT * FROM `usuario` WHERE id_usuario = $id";
-                        $retorno = mysqli_query($conn, $sql);
-
-                        while ($array = mysqli_fetch_array($retorno, MYSQLI_ASSOC)) {
-                            $id_usuario = $array['id_usuario'];
-                            $nome = $array['nome'];
-                            $email = $array['email'];
-                            $data_cadastro = $array['data_cadastro'];                    
-                    ?>
-                <dl class="row">
-                    <dt class="col-sm-3">ID</dt>
-                    <dd class="col-sm-9"><?= $id_usuario ?></dd>
-
-                    <dt class="col-sm-3">Nome</dt>
-                    <dd class="col-sm-9"><?= $nome ?></dd>
-
-                    <dt class="col-sm-3">E-mail</dt>
-                    <dd class="col-sm-9"><?= $email ?></dd>
-
-                    <dt class="col-sm-3 text-truncate">Data do Cadastro</dt>
-                    <dd class="col-sm-9"><?= $data_cadastro ?> </dd>
-                </dl>
-                <?php } ?>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-info" data-dismiss="modal">OK</button>
-            </div>
+            <?php
+        if (isset($_GET['atualizado'])) {
+            echo '<div id="alerta" class="alert alert-success" role="alert">
+            Produto <b>' . $_GET['atualizado'] . '</b> atualizado com sucesso!.
+             </div>';
+        }
+        if (isset($_GET['excluido'])) {
+            echo '<div id="alerta" class="alert alert-danger" role="alert">
+            Produto <b>' . $_GET['excluido'] . '</b> excluido com sucesso!.
+            </div>';
+        }
+        if (isset($_GET['cadastrado'])) {
+            echo '<div id="alerta" class="alert alert-success" role="alert">
+            Produto cadastrado com sucesso!.
+            </div>';
+        }
+     ?>
         </div>
     </div>
 </div>
@@ -141,31 +111,12 @@ require('header.php');
                 Tem certeza que deseja excluiir o item selecionado?
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-success" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-danger">Apagar</button>
+                <button type="button" class="btn btn-success" data-dismiss="modal">Não</button>
+                <a href="usuario_apagar.php?id=<?=$id_usuario?>"><button type="button"  class="btn btn-danger">Sim</button></a>
             </div>
         </div>
     </div>
 </div>
-
-<?php
-        if (isset($_GET['atualizado'])) {
-            echo '<div id="alerta" class="alert alert-success" role="alert">
-            Produto <b>' . $_GET['atualizado'] . '</b> atualizado com sucesso!.
-             </div>';
-        }
-        if (isset($_GET['excluido'])) {
-            echo '<div id="alerta" class="alert alert-danger" role="alert">
-            Produto <b>' . $_GET['excluido'] . '</b> excluido com sucesso!.
-            </div>';
-        }
-        if (isset($_GET['cadastrado'])) {
-            echo '<div id="alerta" class="alert alert-success" role="alert">
-            Produto cadastrado com sucesso!.
-            </div>';
-        }
-     ?>
-
 
 <?php
     require('footer.php');

@@ -49,56 +49,57 @@ require('header.php');
                 <div class="form-group col-md-5">
                     <label>Estado</label>
                     <select name="estado" id="estado" class="form-control">
-                        <option autocomplete="off" value="">Selecione</option>
+                        <option select>*Selecione*</option>
+                        <option>Rio de Janeiro</option>
                     </select>
                 </div>
                 <div class="form-group col-md-5">
                     <label>Cidade</label>
                     <select name="cidade" id="cidade" class="form-control">
-                        <option selected>Selecione</option>
-                        <option>...</option>
+                        <option selected>*Selecione*</option>
+                        <option>Belford Roxo</option>
                     </select>
                 </div>
                 <div class="form-group col-md-2">
                     <label>CEP</label>
                     <input name="cep" type="text" class="form-control" id="cep" placeholder="xx.xxxx-xxx"
-                        autocomplete="off" value="">
+                        autocomplete="off" value="s">
                 </div>
             </div>
             <div class="form-row">
-                <div class="form-group col-md-3">
+                <div class="form-group col-md-2">
                     <label><span class="text-danger">*</span> Login</label>
                     <input name="login" type="text" class="form-control" id="login" placeholder="Insira um login"
-                        autocomplete="off" required>
+                        autocomplete="off" value="">
                 </div>
                 <div class="form-group col-md-2">
                     <label><span class="text-danger">*</span> Nivel de Acesso</label>
-                    <select name="tipo_acesso" id="tipo_acesso" class="form-control" required >
-                        <option selected>*Não definido*</option>
-                        <option value="1">Administrador</option>
-                        <option value="2">Usuario</option>
+                    <select name="tipo_acesso" id="tipo_acesso" class="form-control">
+
+                        <option value="1">1-Usuario</option>
+                        <option value="2">2-Administrador</option>
                     </select>
                 </div>
-                <div class="form-group col-md-3">
+                <div class="form-group col-md-2">
                     <label><span class="text-danger">*</span> Senha</label>
                     <input name="senha" type="password" class="form-control" id="senha"
-                        placeholder="A senha com mínimo de 6 caracteres" autocomplete="off" required>
+                        placeholder="A senha com mínimo de 6 caracteres" autocomplete="off" value="">
                 </div>
-                <div class="form-group col-md-3">
-                    <label><span class="text-danger">*</span> Confirmação de Senha</label>
+                <div class="form-group col-md-2">
+                    <label><span class="text-danger">*</span> Repita a Senha</label>
                     <input name="conf_senha" type="password" class="form-control" id="conf_senha"
-                        placeholder="Confirmar a senha" autocomplete="off" required>
+                        placeholder="Confirmar a senha" autocomplete="off" value="">
                 </div>
                 <div class="form-check col-md-1 p-5">
-                    <input class="form-check-input" name="situacao" type="checkbox" value="ativo" id="situacao">
-                    <label class="form-check-label" for="defaultCheck1">
-                        ativo
-                    </label>
+                    <input class="form-check-input" name="situacao" type="radio" value="ativo" id="situacao" checked>
+                    <label class="form-check-label">Ativo</label>
+                </div>
+                <div class="form-check col-md-1 p-5">
+                    <input class="form-check-input" name="situacao" type="radio" value="ativo" id="situacao">
+                    <label class="form-check-label">Inativo</label>
                 </div>
             </div>
-            <div class="form-row">
 
-            </div>
             <p>
                 <span class="text-danger">*</span> Campo Obrigatório
             </p>

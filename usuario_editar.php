@@ -41,7 +41,7 @@ $id = $_GET['id'];
                     $retorno = mysqli_query($conn, $sql);
 
                     while ($array = mysqli_fetch_array($retorno, MYSQLI_ASSOC)){
-                        
+                        +
                         $Id_usuario = $array['id_usuario']; 
                         $nome  = $array['nome'];
                         $email = $array['email'];
@@ -53,13 +53,14 @@ $id = $_GET['id'];
                         $cidade = $array['cidade'];
                         $cep = $array['cep'];
                         $login = $array['user'];
+                        $situacao = $array['situacao'];
 
                 ?>
                 <div class="form-row">
                     <div class="form-group col-md-2">
                         <label> Código</label>
-                        <input name="codigo" type="text" class="form-control" id="codigo" autocomplete="off"
-                            value="<?= $Id_usuario ?>">
+                        <input name="codigo" type="number" class="form-control" id="codigo" autocomplete="off" disabled value="<?= $Id_usuario ?>">
+                        <input type="hidden" id="codigo" name="codigo" value="<?= $Id_usuario ?>">
                     </div>
                     <div class="form-group col-md-4">
                         <label><span class="text-danger">*</span> Nome</label>
@@ -80,7 +81,7 @@ $id = $_GET['id'];
                     </div>
                     <div class="form-group col-md-2">
                         <label>Número</label>
-                        <input name="numero" type="text" class="form-control" id="numero" placeholder="123"
+                        <input name="numero" type="number" class="form-control" id="numero" placeholder="123"
                             autocomplete="off" value="<?= $numero ?>">
                     </div>
                     <div class="form-group col-md-4">
@@ -94,7 +95,7 @@ $id = $_GET['id'];
                         <label>Estado</label>
                         <select name="estado" id="estado" class="form-control">
                             <option select>*Selecione*</option>
-                            <option >Rio de Janeiro</option>
+                            <option>Rio de Janeiro</option>
                         </select>
                     </div>
                     <div class="form-group col-md-5">
@@ -119,9 +120,9 @@ $id = $_GET['id'];
                     <div class="form-group col-md-2">
                         <label><span class="text-danger">*</span> Nivel de Acesso</label>
                         <select name="tipo_acesso" id="tipo_acesso" class="form-control">
-                            
-                            <option value="1">Usuario</option>
-                            <option value="2">Administrador</option>
+
+                            <option value="1">1-Usuario</option>
+                            <option value="2">2-Administrador</option>
                         </select>
                     </div>
                     <div class="form-group col-md-2">
@@ -130,21 +131,18 @@ $id = $_GET['id'];
                             placeholder="A senha com mínimo de 6 caracteres" autocomplete="off" value="<?= $senha ?>">
                     </div>
                     <div class="form-group col-md-2">
-                        <label><span class="text-danger">*</span> Confirmação de Senha</label>
+                        <label><span class="text-danger">*</span> Repita a Senha</label>
                         <input name="conf_senha" type="password" class="form-control" id="conf_senha"
                             placeholder="Confirmar a senha" autocomplete="off" value="<?= $senha ?>">
                     </div>
                     <div class="form-check col-md-1 p-5">
-                        <input class="form-check-input" name="situacao" type="radio" value="ativo" id="situacao" checked>
-                        <label class="form-check-label">Ativo</label>                        
+                        <input class="form-check-input" name="situacao" type="radio" value="<?= $situacao ?>" id="situacao">
+                        <label class="form-check-label">Ativo</label>
                     </div>
                     <div class="form-check col-md-1 p-5">
-                        <input class="form-check-input" name="situacao" type="radio" value="ativo" id="situacao">
-                        <label class="form-check-label">Inativo</label>                        
+                        <input class="form-check-input" name="situacao" type="radio" value="<?= $situacao ?>" id="situacao">
+                        <label class="form-check-label">Inativo</label>
                     </div>
-                </div>
-                <div class="form-row">
-
                 </div>
                 <p>
                     <span class="text-danger">*</span> Campo Obrigatório

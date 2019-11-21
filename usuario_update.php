@@ -16,12 +16,13 @@ $cep            = $_POST["cep"];
 $login          = $_POST["login"];
  
 
-$sql = "UPDATE usuario SET nome = '$nome', email = '$email', tipo_acesso = $tipo_acesso, situacao = '$situacao', senha = '$senha', endereco = '$endereco', numero = $numero, complemento = '$complemento, estado = '$estado',cidade = '$cidade', cep = $cep, user = '$login'" .
+$sql = "UPDATE usuario SET nome = '$nome', email = '$email', tipo_acesso = $tipo_acesso, situacao = '$situacao', senha = '$senha', rua = '$endereco', numero = $numero, complemento = '$complemento', estado = '$estado',cidade = '$cidade', cep = $cep, user = '$login'" .
        " WHERE id_usuario = $id";
 
        $update = mysqli_query($conn,$sql);
-
+       echo $sql;
 if($update)
     header("Location: usuario_listar.php?atualizado=".$id)
 
 ?>
+
