@@ -50,7 +50,7 @@ INSERT INTO `produto` ( `nome`, `descricao`, `preco`, `tipo`, `categoria`, `situ
 
 /* Estrutura da tabela fornecedor*/
 
-DROP TABLE IF EXISTS `fornecedor`;
+DROP TABLE IF EXISTS fornecedor;
 
 CREATE TABLE IF NOT EXISTS `fornecedor` (
   `IdFornecedor` int(11) NOT NULL AUTO_INCREMENT,
