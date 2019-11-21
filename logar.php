@@ -10,7 +10,7 @@ if(empty($_POST['usuario']) || empty($_POST['senha'])) {
 $usuario = trim($_POST['usuario']);
 $password = trim($_POST['senha']);
 
-$sql = "SELECT user, senha, id_usuario FROM usuario WHERE user = '$usuario' AND status = 'Ativo'";
+$sql = "SELECT user, senha, id_usuario FROM usuario WHERE user = '$usuario' AND situacao = 'ativo'";
 $retornoUsuario = mysqli_query($conn,$sql);
 $totalRetornado = mysqli_num_rows($retornoUsuario);
 
@@ -26,7 +26,7 @@ if($totalRetornado == 1){
         $senhaDecodificada = sha1($password);
         if($senhaDecodificada == $senhaCadastrada){
             $_SESSION['usuario'] = $array["id_usuario"];
-            header("Location: home.html"); 
+            header("Location: home.php"); 
         } else{
             header("Location: index.php?dadosInvalidos=1"); 
         }

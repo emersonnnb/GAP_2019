@@ -11,22 +11,22 @@ DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE IF NOT EXISTS `usuario` (
   `id_usuario` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `data_cadastro` TIMESTAMP,
-  `nome` varchar(80) ,  
-  `email` varchar(100) ,
-  `nivelusuario` int(11) ,
-  `status` varchar(50) ,
+  `nome` varchar(255) ,  
+  `email` varchar(255) ,
+  `tipo_acesso` int(11) ,
+  `situacao` varchar(255) ,
   `rua` varchar(255),
-  `numero` int(11),
+  `numero` int(255),
   `complemento` varchar(255),
   `estado` varchar(255),
   `cidade` varchar(255),
-  `cep` int(15), 
-  `senha` varchar(256) ,
-  `user` varchar(30)
+  `cep` int(255), 
+  `senha` varchar(255) ,
+  `user` varchar(255)
 );
 
-INSERT INTO `usuario` ( `nome`, `email`, `nivelusuario`, `status`, `senha`, `user`) VALUES
-('emerson ', 'teste@teste.com.br', 1, 'Ativo', '7c4a8d09ca3762af61e59520943dc26494f8941b','admin');
+INSERT INTO usuario (nome, email, tipo_acesso, situacao, senha, user) VALUES
+('emerson ', 'teste@teste.com.br', 1, 'ativo', '7c4a8d09ca3762af61e59520943dc26494f8941b','admin');
 
 DROP TABLE IF EXISTS `produto`;
 
@@ -35,14 +35,16 @@ CREATE TABLE IF NOT EXISTS `produto` (
   `dat_cadastro` TIMESTAMP,  
   `nome` varchar(30) ,  
   `descricao` varchar(255) ,  
-  `preco` DOUBLE(255) ,  
+  `preco` varchar(255) ,  
   `tipo` varchar(255) , 
   `categoria` varchar(255) , 
-  `status` varchar(255) , 
+  `situacao` varchar(255) , 
   `uni_medida` varchar(255) , 
-  `cod_ean` int(255)   
- 
+  `cod_ean` varchar(255)  
 );
+
+INSERT INTO `produto` ( `nome`, `descricao`, `preco`, `tipo`, `categoria`, `situacao`, `uni_medida`, `cod_ean`) VALUES
+('Trakinas', 'Biscoito trakinas morango', '2,00', 'simples', 'Biscoitos','1','UN','78912345611');
 
 /* Estrutura da Tabela de Endereço 
 

@@ -1,7 +1,7 @@
 <?php
     $servername = "localhost";
-    $username = "root";
-    $password = "";
+    $username = "user";
+    $password = "123";
     $database = "gap";
     
     //  Create a new connection to the MySQL database using PDO

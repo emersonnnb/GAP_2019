@@ -42,19 +42,18 @@ $menu = (isset($page)) ? $page : 'index';
     <div class="d-flex">
         <nav class="sidebar">
             <ul class="list-unstyled">
-                <li><a href="home.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-                
+                <li><a href="home.php"><i class="fas fa-tachometer-alt"></i> MENU</a></li>                
                 <li><a href="#submenu1" data-toggle="collapse"><i class="fas fa-user"></i> Usuário </a>
                     <ul id="submenu1" class="list-unstyled collapse">
                         <li <?php echo ($menu == 'novo_usuario') ? 'class="active"' : null; ?>><a href="./usuario_cadastrar.php"><i class="fas fa-user-plus"></i> Novo </a></li>
-                        <li <?php echo ($menu == 'listar_usuario') ? 'class="active"' : null; ?>><a href="usuario_listar.php"><i class="fas fa-users"></i> Usuários </a></li>
+                        <li <?php echo ($menu == 'listar_usuario') ? 'class="active"' : null; ?>><a href="./usuario_listar.php"><i class="fas fa-users"></i> Usuários </a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="#submenu2" data-toggle="collapse"><i class="fas fa-list-ul"></i> Produto</a>
                     <ul id="submenu2" class="list-unstyled collapse">
-                        <li <?php echo ($menu == 'novo_produto') ? 'class="active"' : null; ?>><a href="produto_cadastrar.php"><i class="fas fa-tags"></i> Novo</a></li>
-                        <li <?php echo ($menu == 'listar_produto') ? 'class="active"' : null; ?>><a href="produto_listar.php"><i class="fas fa-tags"></i> Listar</a></li>
+                        <li <?php echo ($menu == 'novo_produto') ? 'class="active"' : null; ?>><a href="./produto_cadastrar.php"><i class="fas fa-tags"></i> Novo</a></li>
+                        <li <?php echo ($menu == 'listar_produto') ? 'class="active"' : null; ?>><a href="./produto_listar.php"><i class="fas fa-tags"></i> Listar</a></li>
                        <!-- <li><a href="#"><i class="far fa-list-alt"></i> Listar </a></li>-->
                     </ul>
                 </li>
@@ -70,6 +69,12 @@ $menu = (isset($page)) ? $page : 'index';
                     <ul id="submenu4" class="list-unstyled collapse">
                         <li><a href="#"><i class="fas fa-tags"></i> Cadastrar</a></li>
                         <li><a href="#"><i class="far fa-list-alt"></i> Listar </a></li>
+                    </ul>
+                </li>
+                <li><a href="#submenu5" data-toggle="collapse"><i class="fas fa-user"></i> Cliente </a>
+                    <ul id="submenu5" class="list-unstyled collapse">
+                        <li <?php echo ($menu == 'novo_cliente') ? 'class="active"' : null; ?>><a href="./cliente_cadastrar.php"><i class="fas fa-user-plus"></i> Novo </a></li>
+                        <li <?php echo ($menu == 'listar_cliente') ? 'class="active"' : null; ?>><a href="cliente_listar.php"><i class="fas fa-users"></i> Listar </a></li>
                     </ul>
                 </li>
                 <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
