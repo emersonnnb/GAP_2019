@@ -64,6 +64,7 @@ INSERT INTO `fornecedor` (`IdFornecedor`, `Nome`, `CnpjFornecedor`) VALUES
 (2, 'Fornecedor 02', 12345678911),
 (3, 'Fornecedor 03', 12345678912);
 
+
 /* Estrutura da Tabela de Endereço 
 
 DROP TABLE IF EXISTS `endereco`;
