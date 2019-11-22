@@ -10,5 +10,4 @@
     $retorno = mysqli_query($conn, $sql);
     $array = mysqli_fetch_array($retorno);
     $nivel = $array['tipo_acesso'];
-    $user = "SELECT nome FROM usuario WHERE id_usuario = $usuarioLogado  AND situacao = 'ativo'";
     ?> 

@@ -29,7 +29,7 @@ $menu = (isset($page)) ? $page : 'index';
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle menu-header" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">
-                        <img class="rounded-circle" src="imagem/icon.png" width="20" height="20"> &nbsp;<span class="d-none d-sm-inline"><?= $user ?></span>
+                        <img class="rounded-circle" src="imagem/icon.png" width="20" height="20"> &nbsp;<span class="d-none d-sm-inline">usuario</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="#"><i class="fas fa-user"></i> Perfil</a>
@@ -72,7 +72,7 @@ $menu = (isset($page)) ? $page : 'index';
                         <li><a href="#"><i class="far fa-list-alt"></i> Listar </a></li>
                     </ul>
                 </li>
-                <li><a href="#submenu5" data-toggle="collapse"><i class="fas fa-user"></i> Cliente </a>
+                <li><a href="#submenu5" data-toggle="collapse"><i class="fas fa-shopping-bag"></i> Cliente </a>
                     <ul id="submenu5" class="list-unstyled collapse">
                         <li <?php echo ($menu == 'novo_cliente') ? 'class="active"' : null; ?>><a href="./cliente_cadastrar.php"><i class="fas fa-user-plus"></i> Novo </a></li>
                         <li <?php echo ($menu == 'listar_cliente') ? 'class="active"' : null; ?>><a href="cliente_listar.php"><i class="fas fa-users"></i> Listar </a></li>
