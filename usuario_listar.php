@@ -79,17 +79,17 @@ require('header.php');
             <?php
         if (isset($_GET['atualizado'])) {
             echo '<div id="alerta" class="alert alert-success" role="alert">
-            Produto <b>' . $_GET['atualizado'] . '</b> atualizado com sucesso!.
+            Usuário <b>' . $_GET['atualizado'] . '</b> atualizado com sucesso!.
              </div>';
         }
         if (isset($_GET['excluido'])) {
             echo '<div id="alerta" class="alert alert-danger" role="alert">
-            Produto <b>' . $_GET['excluido'] . '</b> excluido com sucesso!.
+            Usuário <b>' . $_GET['excluido'] . '</b> excluido com sucesso!.
             </div>';
         }
         if (isset($_GET['cadastrado'])) {
             echo '<div id="alerta" class="alert alert-success" role="alert">
-            Produto cadastrado com sucesso!.
+            Usuário cadastrado com sucesso!.
             </div>';
         }
      ?>

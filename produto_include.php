@@ -1,15 +1,20 @@
 <?php
 include_once("conexao.php");
 
-    $codigo       = $_GET["codigo"]; 
+    $id_produto       = $_GET["id_produto"];
+    $dat_cadastro         = $_GET["dat_cadastro"]; 
     $nome         = $_GET["nome"];
-    $quantidade   =$_GET["quantidade"];
+    $descricao   =$_GET["descricao"];
+    $preco         = $_GET["preco"];
+    $tipo         = $_GET["tipo"];
     $categoria    =$_GET["categoria"];
-    $fornecedor   =$_GET["fornecedor"];
+    $situcao   =$_GET["situacao"];
+    $unid_medida      = $_GET["unid_medida"];
+    $cod_ean        = $_GET["cod_ean"];
 
      
 
-    $consulta = mysqli_query($conn,"select user from produto where id_produto = '$codigo'");
+    $consulta = mysqli_query($conn,"select user from produto where id_produto = '$id_produto'");
     $linha = mysqli_num_rows($consulta);
     
 	if($linha != 0) {        
@@ -19,8 +24,8 @@ include_once("conexao.php");
     }
     
     else{
-    $result_produto = "INSERT INTO `produto` (`id_produto`, 'numero''nome',`quantidade`,`categoria`,`fornecedor`)
-        VALUES (NULL,CURRENT_TIMESTAMP,'$codigo' ,'NULL','$nome','$quantidade','$categoria','$fornecedor')";
+    $result_produto = "INSERT INTO `produto` (`id_produto`, 'dat_cadastro''nome',`descricao`,`preco`,`tipo,`categoria`,`situacao`,`uni_medida`,`cod_ean`)
+        VALUES (NULL,CURRENT_TIMESTAMP,'$id_produto' ,'NULL','$dat_cadstro','$nome','$descricao','$preco','$tipo','$categoria','$situacao','$uni_medida''$cod_ean')";
     $resultado_produto = mysqli_query($conn, $result_produto);
     }
     echo "<script type=\"text/javascript\">alert('Produto cadastrado com Sucesso!!');</script>";

@@ -21,11 +21,12 @@ require('header.php');
                     <table class="table table-striped table-hover table-bordered ">
                         <thead>
                             <tr>
-                                <th>ID</th>
+                            <th>ID</th>
+                                <th>Data do Produto</th>
                                 <th>Nome</th>
-                                <th>Quantidade</th>
-                                <th>Categoria</th>
-                                <th>Fornecedor</th>
+                                <th>Descrição</th>
+                                <th>Preço</th>
+                                <th class="text-center">Ações</th>
                                 
                                
                             </tr>
@@ -62,37 +63,94 @@ require('header.php');
 
                         while ($array = mysqli_fetch_array($retorno, MYSQLI_ASSOC)) {
                             $id_produto = $array['id_produto'];
-                            $numero = $array['numero'];
+                            $dat_cadastro = $array['dat_cadastro'];
                             $nome = $array['nome'];
-                            $quantidade = $array['quantidade'];
-                            $categoria = $array['fornecedor'];
+                            $descricao = $array['descricao'];
+                            $preco = $array['preco'];
                                                 
                     ?>
-                            <dl class="row">
-                                <dt class="col-sm-3">ID</dt>
-                                <dd class="col-sm-9"><?= $id_produto ?></dd>
+                    <tr>
+                    <th>ID</th>
+                                <th>Data do Produto</th>
+                                <th>Nome</th>
+                                <th>Descrição</th>
+                                <th>Preço</th>
+                                <th class="text-center">Ações</th>
+                            <span class="d-none d-md-block">
+                                <a href="produto_visualizar.php?id=<?=$id_produto?>"
+                                    class="btn btn-outline-primary btn-sm" data-toggle="modal"
+                                    data-target="#visualizarRegistro">Visualizar</a>
 
-                                <dt class="col-sm-3">Numero</dt>
-                                <dd class="col-sm-9"><?= $numero ?></dd>
+                                <a href="produto_editar.php?id=<?=$id_produto?>"
+                                    class="btn btn-outline-warning btn-sm">Editar</a>
 
-                                <dt class="col-sm-3">Quantidade</dt>
-                                <dd class="col-sm-9"><?= $quantidade ?></dd>
-
-                                <dt class="col-sm-3 text-truncate">Categoria</dt>
-                                <dd class="col-sm-9"><?= $categoria ?> </dd>
-
-                                <dt class="col-sm-3 text-truncate">Fornecedor</dt>
-                                <dd class="col-sm-9"><?= $fornecedor ?> </dd>
-                            </dl>
+                                <a href="produto_apagar.php?id=<?=$id_produto?>" class="btn btn-outline-danger btn-sm"
+                                    data-toggle="modal" data-target=" #apagarRegistro">Apagar</a>
+                            </span> 
+                            <div class="dropdown d-block d-md-none">
+                                <button class="btn btn-primary dropdown-toggle btn-sm" type="button" id="acoesListar"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Ações
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="acoesListar">
+                                    <a class="dropdown-item" href="visualizar.php?id=<?=$id_produto?>"
+                                        data-toggle="modal" data-target="#visualizarRegistro">Visualizar</a>
+                                    <a class="dropdown-item" href="produto_editar.php?id=<?=$id_produto?>">Editar</a>
+                                    <a class="dropdown-item" href="produto_apagar.php" data-toggle="modal"
+                                        data-target="#apagarRegistro">Apagar</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
                     <?php } ?>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-info" data-dismiss="modal">OK</button>                    
-                </div>
+
+                </tbody>
+            </table>
+            <?php
+        if (isset($_GET['atualizado'])) {
+            echo '<div id="alerta" class="alert alert-success" role="alert">
+            Produto <b>' . $_GET['atualizado'] . '</b> atualizado com sucesso!.
+             </div>';
+        }
+        if (isset($_GET['excluido'])) {
+            echo '<div id="alerta" class="alert alert-danger" role="alert">
+            Produto <b>' . $_GET['excluido'] . '</b> excluido com sucesso!.
+            </div>';
+        }
+        if (isset($_GET['cadastrado'])) {
+            echo '<div id="alerta" class="alert alert-success" role="alert">
+            Produto cadastrado com sucesso!.
+            </div>';
+            
+        }
+     ?>
+        </div>
+    </div>
+</div>
+                           
+               
+
+    <!-- Modal para confirmar a exclusão de um registro-->
+<div class="modal fade" id="apagarRegistro" tabindex="-1" role="dialog" aria-labelledby="apagarRegistro"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-danger text-white">
+                <h5 class="modal-title" id="exampleModalLabel">Excluir item</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Tem certeza que deseja excluiir o item selecionado?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-dismiss="modal">Não</button>
+                <a href="produto_apagar.php?id=<?=$id_produto?>"><button type="button"  class="btn btn-danger">Sim</button></a>
             </div>
         </div>
     </div>
+</div>
     <?php
     require('footer.php');
 ?>
-

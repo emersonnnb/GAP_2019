@@ -2,6 +2,30 @@
 $page = 'novo_usuario';
 require('header.php');
 ?>
+<script type="text/javascript">
+function validar() {
+    var senha = formuser.senha.value;
+    var conf_senha = formuser.conf_senha.value;
+
+    if (senha == "" || senha.length <= 5) {
+        alert('Preencha o campo senha com minimo 6 caracteres');
+        formuser.senha.focus();
+        return false;
+    }
+
+    if (conf_senha == "" || conf_senha.length <= 5) {
+        alert('Preencha o campo senha com minimo 6 caracteres');
+        formuser.conf_senha.focus();
+        return false;
+    }
+
+    if (senha != conf_senha) {
+        alert('Senhas diferentes');
+        formuser.senha.focus();
+        return false;
+    }
+}
+</script>
 <!-- Formulario de cadastro  -->
 <div class="content p-1">
     <div class="list-group-item">
@@ -11,7 +35,7 @@ require('header.php');
             </div>
         </div>
         <hr>
-        <form action="usuario_include.php" method="POST">
+        <form name="formuser" action="usuario_include.php" method="POST">
             <div class="form-row">
                 <div class="form-group col-md-2">
                     <label> Código</label>
@@ -23,7 +47,7 @@ require('header.php');
                         autocomplete="off" required>
                 </div>
                 <div class="form-group col-md-6">
-                    <label>E-mail</label>
+                    <label><span class="text-danger">*</span> E-mail</label>
                     <input name="email" type="email" class="form-control" id="email" placeholder="Seu e-mail"
                         autocomplete="off" required>
                 </div>
@@ -31,12 +55,12 @@ require('header.php');
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label>Endereço</label>
-                    <input name="endereco" type="text" class="form-control" id="endereco" placeholder="Rua João..."
+                    <input name="endereco" type="text" class="form-control" id="endereco" placeholder="Nome da rua"
                         autocomplete="off" value="">
                 </div>
                 <div class="form-group col-md-2">
                     <label>Número</label>
-                    <input name="numero" type="text" class="form-control" id="numero" placeholder="123"
+                    <input name="numero" type="number" class="form-control" id="numero" placeholder="123"
                         autocomplete="off" value="">
                 </div>
                 <div class="form-group col-md-4">
@@ -70,12 +94,11 @@ require('header.php');
                 <div class="form-group col-md-2">
                     <label><span class="text-danger">*</span> Login</label>
                     <input name="login" type="text" class="form-control" id="login" placeholder="Insira um login"
-                        autocomplete="off" value="">
+                        autocomplete="off" value="" required>
                 </div>
                 <div class="form-group col-md-2">
                     <label><span class="text-danger">*</span> Nivel de Acesso</label>
-                    <select name="tipo_acesso" id="tipo_acesso" class="form-control">
-
+                    <select name="tipo_acesso" id="tipo_acesso" class="form-control" required>
                         <option value="1">1-Usuario</option>
                         <option value="2">2-Administrador</option>
                     </select>
@@ -83,12 +106,12 @@ require('header.php');
                 <div class="form-group col-md-2">
                     <label><span class="text-danger">*</span> Senha</label>
                     <input name="senha" type="password" class="form-control" id="senha"
-                        placeholder="A senha com mínimo de 6 caracteres" autocomplete="off" value="">
+                        placeholder="A senha com mínimo de 6 caracteres" autocomplete="off" value="" required>
                 </div>
                 <div class="form-group col-md-2">
                     <label><span class="text-danger">*</span> Repita a Senha</label>
                     <input name="conf_senha" type="password" class="form-control" id="conf_senha"
-                        placeholder="Confirmar a senha" autocomplete="off" value="">
+                        placeholder="Confirmar a senha" autocomplete="off" value="" required>
                 </div>
                 <div class="form-check col-md-1 p-5">
                     <input class="form-check-input" name="situacao" type="radio" value="ativo" id="situacao" checked>
@@ -99,11 +122,10 @@ require('header.php');
                     <label class="form-check-label">Inativo</label>
                 </div>
             </div>
-
             <p>
                 <span class="text-danger">*</span> Campo Obrigatório
             </p>
-            <button type="submit" class="btn btn-primary">Cadastrar</button>
+            <button type="submit" class="btn btn-primary" onclick="return validar()">Cadastrar</button>
 
         </form>
     </div>

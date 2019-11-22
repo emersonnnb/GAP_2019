@@ -1,36 +1,28 @@
 <?php
                 include_once 'conexao.php';
-                $sql = "SELECT id_produto, dat_cadastro, nome, descricao, preco, tipo, categoria, situacao, uni_medida, cod_ean FROM `produto`";
+                $sql = "SELECT idfornecedor , nome, cnpjfornecedor";
                 $retorno = mysqli_query($conn, $sql);
 
                 while ($array = mysqli_fetch_array($retorno, MYSQLI_ASSOC)) {
-                    $id_produto = $array['id_produto'];
-                    $dat_cadastro = $array['dat_cadastro'];
+                    $idfornecedor  = $array['idfornecedor '];
                     $nome = $array['nome'];
-                    $descricao = $array['descricao'];
-                    $preco = $array['preco'];
-                    $tipo = $array['tipo'];
-                    $categoria = $array['categoria'];
-                    $situacao = $array['situacao'];
-                    $uni_medida = $array['uni_medida'];
-                    $cod_ean = $array['cod_ean'];
+                    $cnpj = $array['CnpjFornecedor'];
+                   
                                       
                     ?>
                 <tr>
-                    <th><?= $id_produto ?></th>
-                    <td class="d-none d-sm-table-cell"><?= $dat_cadastro ?></td>
-                    <td class="d-none d-lg-table-cell"><?= $nome ?></td>
-                    <td class="d-none d-lg-table-cell"><?= $descricao ?></td>
-                    <td class="d-none d-lg-table-cell"><?= $preco ?></td>
+                    <th><?= $idfornecedor  ?></th>
+                    <td class="d-none d-sm-table-cell"><?= $nome ?></td>
+                    <td class="d-none d-lg-table-cell"><?= $cnpj ?></td>
                     <td class="text-center">                                
                         <span class="d-none d-md-block">
-                            <a href="produto_visualizar.php?id=<?=$id_produto?>" class="btn btn-outline-primary btn-sm" data-toggle="modal"
+                            <a href="fornecedor_visualizar.php?id=<?=$idfornecedor ?>" class="btn btn-outline-primary btn-sm" data-toggle="modal"
                                     data-target="#visualizarRegistro">Visualizar</a>
 
-                            <a href="produto_editar.php?id=<?=$id_produto?>"
+                            <a href="produto_editar.php?id=<?=$idfornecedor ?>"
                                 class="btn btn-outline-warning btn-sm">Editar</a>
 
-                            <a href="produto_apagar.php?id=<?=$id_produto?>" 
+                            <a href="fornecedor_apagar.php?id=<?=$idfornecedor ?>" 
                             class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target=" #apagarRegistro">Apagar</a>
                         </span>
                         <div class="dropdown d-block d-md-none">
@@ -39,10 +31,10 @@
                                 Ações
                             </button>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="acoesListar">
-                                <a class="dropdown-item" href="visualizar.php?id=<?=$id_produto?>" data-toggle="modal"
+                                <a class="dropdown-item" href="visualizar.php?id=<?=$idfornecedor ?>" data-toggle="modal"
                                     data-target="#visualizarRegistro">Visualizar</a>
-                                <a class="dropdown-item" href="produto_editar.html">Editar</a>
-                                <a class="dropdown-item" href="produto_apagar.html" data-toggle="modal"
+                                <a class="dropdown-item" href="fornecedor_editar.html">Editar</a>
+                                <a class="dropdown-item" href="fornecedor_apagar.html" data-toggle="modal"
                                     data-target="#apagarRegistro">Apagar</a>
                             </div>
                         </div>
@@ -68,7 +60,3 @@
                 </div>';
         }
         ?>
-                
-
-
-            
