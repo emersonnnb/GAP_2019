@@ -121,6 +121,7 @@ require('header.php');
             echo '<div id="alerta" class="alert alert-success" role="alert">
             Produto cadastrado com sucesso!.
             </div>';
+            
         }
      ?>
         </div>
