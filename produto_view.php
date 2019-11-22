@@ -1,20 +1,27 @@
 <?php
                 include_once 'conexao.php';
-                $sql = "SELECT id_produto, nome, quantidade, categoria, fornecedor FROM `produto`";
+                $sql = "SELECT id_produto, dat_cadastro, nome, descricao, preco, tipo, categoria, situacao, uni_medida, cod_ean FROM `produto`";
                 $retorno = mysqli_query($conn, $sql);
 
                 while ($array = mysqli_fetch_array($retorno, MYSQLI_ASSOC)) {
                     $id_produto = $array['id_produto'];
+                    $dat_cadastro = $array['dat_cadastro'];
                     $nome = $array['nome'];
-                    $quantidade = $array['quantidade'];
+                    $descricao = $array['descricao'];
+                    $preco = $array['preco'];
+                    $tipo = $array['tipo'];
                     $categoria = $array['categoria'];
-                    $fornecedor = $array['fornecedor'];
+                    $situacao = $array['situacao'];
+                    $uni_medida = $array['uni_medida'];
+                    $cod_ean = $array['cod_ean'];
                                       
                     ?>
                 <tr>
                     <th><?= $id_produto ?></th>
-                    <td class="d-none d-sm-table-cell"><?= $nome ?></td>
-                    <td class="d-none d-lg-table-cell"><?= $quantidade ?></td>
+                    <td class="d-none d-sm-table-cell"><?= $dat_cadastro ?></td>
+                    <td class="d-none d-lg-table-cell"><?= $nome ?></td>
+                    <td class="d-none d-lg-table-cell"><?= $descricao ?></td>
+                    <td class="d-none d-lg-table-cell"><?= $preco ?></td>
                     <td class="text-center">                                
                         <span class="d-none d-md-block">
                             <a href="produto_visualizar.php?id=<?=$id_produto?>" class="btn btn-outline-primary btn-sm" data-toggle="modal"

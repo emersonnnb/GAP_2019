@@ -1,21 +1,61 @@
 <?php
-$page = 'novo_produto';
+include_once 'conexao.php';
+$page = 'listar_produto';
 require('header.php');
+$id = $_GET['id'];
 ?>
+<!-- Title do formulário  -->
+<div class="content p-1">
+    <div class="list-group-item">
+        <div class="d-flex">
+            <div class="mr-auto p-2">
+                <h2 class="display-4 titulo">Editar Produto</h2>
+            </div>
+            <div class="p2">
+                <span class="d-none d-md-block">
+                    <a href="javascript:history.go(-1)" class="btn btn-info btn-sm">Voltar</a>
 
-        <!--Formulário-->
-        <div class="content p-1">
-            <div class="list-group-item">
-                <div class="d-flex">
-                    <div class="mr-auto p-2">
-                        <h2 "display-4 titulo">Cadastrar Produto</h2>
+                </span>
+                <div class="dropdown d-block d-md-none">
+                    <button class="btn btn-primary dropdown-toggle btn-sm" type="button" id="acoesListar"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Ações
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="acoesListar">
+                        <a class="dropdown-item" href="produto_listar.php">Listar</a>
+                        <a class="dropdown-item" href="produto_visualizar.php">Visualizar</a>
+                        <a class="dropdown-item" href="produto_apagar.php" data-toggle="modal"
+                            data-target="#apagarRegistro">Apagar</a>
                     </div>
-                    <a href="listar.html">
-                    </a>
                 </div>
-                <hr>
-                <form action="produto_include.php" method="GET">
-                    <div class="form-row">
+
+            </div>
+            </a>
+        </div>
+        <!-- Formulario de edição  -->
+        <hr>
+        <div>
+            <form action="produto_update.php" method="POST">
+                <?php
+                    $sql = "SELECT * FROM produto WHERE id_produto = $id";
+                    $retorno = mysqli_query($conn, $sql);
+
+                    while ($array = mysqli_fetch_array($retorno, MYSQLI_ASSOC)){
+                        +
+                    $id_produto = $array['id_produto'];
+                    $dat_cadastro = $array['dat_cadastro'];
+                    $nome = $array['nome'];
+                    $descricao = $array['descricao'];
+                    $preco = $array['preco'];
+                    $tipo = $array['tipo'];
+                    $categoria = $array['categoria'];
+                    $situacao = $array['situacao'];
+                    $uni_medida = $array['uni_medida'];
+                    $cod_ean = $array['cod_ean'];
+
+                ?>
+                
+                <div class="form-row">
                        
                          <div class="form-group col-md-4">
                             <label>
@@ -86,35 +126,37 @@ require('header.php');
                                 <input name="cod_ean" type="text" class="form-control" id="cod_eanS" placeholder="" required>
                             </div>                    
                         </div>
+                <p>
+                    <span class="text-danger">*</span> Campo Obrigatório
+                </p>
+                <button type="submit" class="btn btn-warning">Atualizar</button>
 
-                        </p>
-                        <button type="submit" class="btn btn-success">Cadastrar</button>
-                </form>
+                <?php } ?>
+            </form>
+        </div>
+
+        <!-Modal para confirmar a exclusão de um registo-->
+        <div class="modal fade" id="apagarRegistro" tabindex="-1" role="dialog" aria-labelledby="apagarRegistro"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header bg-danger text-white">
+                        <h5 class="modal-title" id="exampleModalLabel">Excluir item</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Tem certeza que deseja excluiir o item selecionado?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-danger">Apagar</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Modal para confirmar a exclusão de um registo-->
-    <div class="modal fade" id="apagarRegistro" tabindex="-1" role="dialog" aria-labelledby="apagarRegistro" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header bg-danger text-white">
-                    <h5 class="modal-title" id="exampleModalLabel">Excluir item</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Tem certeza que deseja excluir o item selecionado?
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-danger">Apagar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <?php
+
+        <?php
     require('footer.php');
 ?>
-
