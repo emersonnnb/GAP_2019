@@ -12,8 +12,8 @@ include_once("conexao.php");
     
 	if($linha != 0) {        
         echo $linha;
-        echo "<script type=\"text/javascript\">alert('fornecedor ja cadastrado!!');</script>";
-        echo "<script type=\"text/javascript\">window.location='fornecedor_cadatrar.php';</script>";
+        echo "<script type=\"text/javascript\">alert('Fornecedor ja cadastrado!!');</script>";
+        //echo "<script type=\"text/javascript\">window.location='fornecedor_cadatrar.php';</script>";
     }
     
     else{

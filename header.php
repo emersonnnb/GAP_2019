@@ -68,8 +68,8 @@ $menu = (isset($page)) ? $page : 'index';
                 <li>
                     <a href="#submenu4" data-toggle="collapse"><i class="fas fa-truck"></i> Fornecedor</a>
                     <ul id="submenu4" class="list-unstyled collapse">
-                        <li><a href="#"><i class="fas fa-tags"></i> Cadastrar</a></li>
-                        <li><a href="#"><i class="far fa-list-alt"></i> Listar </a></li>
+                        <li <?php echo ($menu == 'novo_fornecedor') ? 'class="active"' : null; ?>><a href="./fornecedor_cadastrar.php"><i class="fas fa-tags"></i> Cadastrar</a></li>
+                        <li <?php echo ($menu == 'listar_fornecedor') ? 'class="active"' : null; ?>><a href="./fornecedor_listar.php"><i class="far fa-list-alt"></i> Listar </a></li>
                     </ul>
                 </li>
                 <li><a href="#submenu5" data-toggle="collapse"><i class="fas fa-user"></i> Cliente </a>

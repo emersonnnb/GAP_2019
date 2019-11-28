@@ -10,7 +10,8 @@ DROP TABLE IF EXISTS `usuario`;
 
 CREATE TABLE IF NOT EXISTS `usuario` (
   `id_usuario` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  `data_cadastro` TIMESTAMP,
+  `dt_registro` TIMESTAMP,
+  `dt_modificacao` datetime,
   `nome` varchar(255) ,  
   `email` varchar(255) ,
   `tipo_acesso` int(11) ,
@@ -32,7 +33,8 @@ DROP TABLE IF EXISTS `produto`;
 
 CREATE TABLE IF NOT EXISTS `produto` (
   `id_produto` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  `dat_cadastro` TIMESTAMP,  
+  `dt_registro` TIMESTAMP,
+  `dt_modificacao` datetime,
   `nome` varchar(30) ,  
   `descricao` varchar(255) ,  
   `preco` varchar(255) ,  
@@ -45,6 +47,22 @@ CREATE TABLE IF NOT EXISTS `produto` (
 
 INSERT INTO `produto` ( `nome`, `descricao`, `preco`, `tipo`, `categoria`, `situacao`, `uni_medida`, `cod_ean`) VALUES
 ('Trakinas', 'Biscoito trakinas morango', '2,00', 'simples', 'Biscoitos','1','UN','78912345611');
+
+/*Estrutura da tabela de Fornecedor*/
+
+DROP TABLE IF EXISTS `fornecedor`;
+
+CREATE TABLE IF NOT EXISTS `fornecedor` (
+  `id_fornecedor` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `dt_registro` TIMESTAMP,
+  `dt_modificacao` datetime,
+  `Nome` varchar(150) NOT NULL,
+  
+
+INSERT INTO `fornecedor` (`IdFornecedor`, `Nome`) VALUES
+(1, 'Fornecedor 01'),
+(2, 'Fornecedor 02'),
+(3, 'Fornecedor 03');
 
 /* Estrutura da Tabela de Endereço 
 
