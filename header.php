@@ -19,14 +19,14 @@ $menu = (isset($page)) ? $page : 'index';
 
 <body>
     <!-- navbar -->
-    <nav class="navbar navbar-expand navbar-dark bg-primary">
+    <nav class="navbar navbar-expand navbar-dark bg-danger">
         <a class="sidebar-toggle text-light mr-3">
             <span class="navbar-toggler-icon"></span>
         </a>
         <a class="navbar-brand" href="#">GAP</a>
 
         <div class="collapse navbar-collapse">
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ml-auto">                 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle menu-header" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">
                         <img class="rounded-circle" src="imagem/icon.png" width="20" height="20"> &nbsp;<span class="d-none d-sm-inline"></span>
